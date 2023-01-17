@@ -87,7 +87,7 @@ router.get("/", auth.optional, function(req, res, next) {
           items: await Promise.all(
             items.map(async function(item) {
               item.seller = await User.findById(item.seller);
-              item.image = item.image || "/placeholder.png"
+              item.image = item.image!="" ? item.image : "/placeholder.png"
               return item.toJSONFor(user);
             })
           ),
@@ -165,7 +165,7 @@ router.get("/:item", auth.optional, function(req, res, next) {
   ])
     .then(function(results) {
       var user = results[0];
-
+      req.item.image = req.item.image!="" ? req.item.image : "/placeholder.png"
       return res.json({ item: req.item.toJSONFor(user) });
     })
     .catch(next);
