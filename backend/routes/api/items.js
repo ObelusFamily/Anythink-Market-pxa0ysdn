@@ -14,7 +14,8 @@ router.param("item", function(req, res, next, slug) {
       if (!item) {
         return res.sendStatus(404);
       }
-      item.image = item.image!="" ? item.image : "/placeholder.png"
+
+      if(item.image=="") item.image="/placeholder.png"
 
       req.item = item;
 
@@ -88,7 +89,7 @@ router.get("/", auth.optional, function(req, res, next) {
           items: await Promise.all(
             items.map(async function(item) {
               item.seller = await User.findById(item.seller);
-              item.image = item.image!="" ? item.image : "/placeholder.png"
+              if(item.image==="") item.image = "/placeholder.png"
               return item.toJSONFor(user);
             })
           ),
