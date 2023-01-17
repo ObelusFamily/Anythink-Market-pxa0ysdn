@@ -30,7 +30,7 @@ var UserSchema = new mongoose.Schema(
       default: "user"
     },
     isVarified:{
-      type:boolean, 
+      type:Boolean, 
       default: false
     },
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
