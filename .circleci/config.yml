@@ -2,7 +2,7 @@ version: 2.1
 
 jobs:
   build-and-test:
-    working-directory: ~/anythink/frontend
+    working_directory: ~/anythink/frontend
     docker:
       - image: cimg/node:16.18
     steps:
