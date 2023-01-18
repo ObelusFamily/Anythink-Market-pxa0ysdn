@@ -84,6 +84,7 @@ const reducer = (state = {}, action) => {
     case SEARCH_FILTER:
       return {
         ...state,
+        searchStr: action.searchStr,
         items: action.payload.items,
         itemsCount: action.payload.itemsCount,
         tab: null,
