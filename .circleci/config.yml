@@ -6,11 +6,6 @@ orbs:
 workflows:
   build-and-test:
     jobs:
-      - node/run:
-          app-dir: frontend
-          version: '16.18'
-          pkg-manager: yarn
-          yarn-run: format
       - node/test:
           app-dir: frontend
           version: '16.18'
@@ -19,5 +14,7 @@ workflows:
           app-dir: frontend
           version: '16.18'
           pkg-manager: yarn
-          yarn-run: lint
+          yarn-run: |
+            format
+            lint
           
