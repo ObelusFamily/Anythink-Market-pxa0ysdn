@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logo from "../../imgs/logo.png";
 
 const StyledDiv = styled.div`
-  background-color: ${props => props.theme.dark}
+  background-color: ${props => props.theme.light}
 `
 
 const Banner = () => {
