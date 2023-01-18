@@ -24,6 +24,8 @@ const mapDispatchToProps = (dispatch) => ({
   onLoad: (tab, pager, payload) =>
     dispatch({ type: HOME_PAGE_LOADED, tab, pager, payload }),
   onUnload: () => dispatch({ type: HOME_PAGE_UNLOADED }),
+  onSearching: (searchStr, payload) =>
+    dispatch({ type: APPLY_SEARCH_FILTER, searchStr, payload }),
 });
 
 class Home extends React.Component {
@@ -45,7 +47,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <Banner />
+        <Banner onSearching={this.props.onSearching}/>
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
