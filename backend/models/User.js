@@ -24,6 +24,7 @@ var UserSchema = new mongoose.Schema(
     },
     isVerified: {
       type: Boolean,
+      default: false
     },
     bio: String,
     image: String,
@@ -90,7 +91,7 @@ UserSchema.methods.toProfileJSONFor = function(user) {
     image:
       this.image || "https://static.productionready.io/images/smiley-cyrus.jpg",
     following: user ? user.isFollowing(this._id) : false,
-    isVerified: false
+    isVerified: this.isVerified
   };
 };
 
