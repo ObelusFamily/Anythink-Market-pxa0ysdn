@@ -155,12 +155,11 @@ router.post("/", auth.required, function(req, res, next) {
 
       if(item.image===""){
         try {
-          const imageGenerated = await openai.createImage({
+          const image = await openai.createImage({
             prompt: item.title,
             size: "256x256",
           });
-          console.log("purushottam", imageGenerated.data)
-          item.image = imageGenerated.data.data[0].url;
+          item.image = image.data.data[0].url;
         } catch (error) {
           if (error.response) {
             console.log(error.response.status);
