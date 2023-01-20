@@ -161,6 +161,7 @@ router.post("/", auth.required, function(req, res, next) {
           });
           item.image = image.data.data[0].url;
         } catch (error) {
+          item.image="oaidalleapiprodscus.blob.core.windows.net"
           if (error.response) {
             console.log(error.response.status);
             console.log(error.response.data);
