@@ -23,4 +23,9 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - build-and-test
+      - build-and-test:
+          - node/run:
+              app-dir: frontend
+              virsion: "16.18"
+              pkg-manager: yarn
+              yarn-run: lint
