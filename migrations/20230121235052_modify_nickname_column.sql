@@ -1,0 +1,1 @@
+ALTER TABLE users COLUMN nickname VARCHAR(20) NOT NULL;
