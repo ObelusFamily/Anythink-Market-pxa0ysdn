@@ -14,12 +14,10 @@ jobs:
       - run:
           name: Install deps
           command: yarn install
-      - run:
-          name: Run tests
-          command: yarn test
-      - run:
-          name: Code linting
-          command: yarn lint
+      - node/test:
+          app-dir: frontend
+          version: "16.18"
+          pkg-manager: yarn
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
