@@ -5,6 +5,8 @@ orbs:
 
 jobs:
   build-and-test:
+    docker:
+      - image: cimg/node:16.18
     working_directory: ~/market/frontend
     steps:
       - checkout:
