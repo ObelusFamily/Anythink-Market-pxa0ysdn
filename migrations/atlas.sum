@@ -1,5 +1,4 @@
-h1:/FdjoM4VeG9e8WbwUjDi73ArVPJ2M16jcZuxvjUcrtQ=
+h1:sUD0TsSSwDwevihRVtGETqoYf1AcSrTH0MlkrEYF2jw=
 1_init.sql h1:20DJEdxGH76vAd08bKTyNH2oEUEGcZ0SLn+Zr+LFz/w=
 20230121231529.sql h1:gkFsD888ko/0KRyAWFAlrt1gZZU9BQU0Zs/wOR+yTa8=
-20230122000022_drop_nickname_column.sql h1:fCuP/duuCM4GRirpw3lCOeKLrqE6jb+gEjr4Nf/v5/Q=
-20230122000143_add_nickname_column.sql h1:fT1WDmdnbsAEsTC7gcPnvlY+FBoB2ZpnsIfSbeQanJ0=
+20230122000735_modify_column.sql h1:IKrM6JIYz78EdI1tZGte545iPWr7xl9aVsTYD5qjUqc=
