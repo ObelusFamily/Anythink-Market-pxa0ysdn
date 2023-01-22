@@ -1,5 +1,8 @@
 version: 2.1
 
+orb:
+  node: circleci/node@5.0.3
+
 jobs:
   build-and-test:
     docker:
