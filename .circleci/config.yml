@@ -1,22 +1,23 @@
 version: 2.1
-
 orbs:
   node: circleci/node@5.0.3
-
 jobs:
   build-and-test:
-    docker:
-      - image: cimg/node:16.18
     working_directory: ~/market/frontend
+    executor:
+      name: node/default
+      tag: '16.19'
     steps:
       - checkout:
           path: ~/market
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: Install deps
-          command: yarn install
+          command: yarn run test
+          name: Run yarn tests
       - run:
-          name: Run tests
-          command: yarn test
+          command: yarn run lint
+          name: Run yarn linting
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
