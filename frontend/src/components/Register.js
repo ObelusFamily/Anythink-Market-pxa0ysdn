@@ -8,6 +8,7 @@ import {
   REGISTER,
   REGISTER_PAGE_UNLOADED,
 } from "../constants/actionTypes";
+import generateAvatar from "../utils/generateAvatar";
 
 const mapStateToProps = (state) => ({ ...state.auth });
 
@@ -19,7 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   onChangeUsername: (value) =>
     dispatch({ type: UPDATE_FIELD_AUTH, key: "username", value }),
   onSubmit: (username, email, password) => {
-    const payload = agent.Auth.register(username, email, password);
+    const image = generateAvatar(username);
+    console.log(image)
+    const payload = agent.Auth.register(username, email, password, image);
     dispatch({ type: REGISTER, payload });
   },
   onUnload: () => dispatch({ type: REGISTER_PAGE_UNLOADED }),

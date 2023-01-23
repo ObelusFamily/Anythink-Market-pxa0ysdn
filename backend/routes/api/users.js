@@ -4,6 +4,7 @@ var passport = require("passport");
 var User = mongoose.model("User");
 var auth = require("../auth");
 const { sendEvent } = require("../../lib/event");
+const convertToImage = require("../../utils/convertToImage");
 
 router.get("/user", auth.required, function(req, res, next) {
   User.findById(req.payload.id)
@@ -77,6 +78,9 @@ router.post("/users", function(req, res, next) {
   user.username = req.body.user.username;
   user.email = req.body.user.email;
   user.setPassword(req.body.user.password);
+
+  const imageName = convertToImage(req.body.user.image, req.body.user.username)
+  user.image = process.env.APP_BACKEND_URL+imageName;
 
   user
     .save()
