@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.0.3
-  
+
 jobs:
   build-and-test:
     docker:
@@ -24,3 +24,8 @@ workflows:
   build-and-test:
     jobs:
       - build-and-test
+      - node/run:
+          app-dir: frontend
+          version: '16.18'
+          pkg-manager: yarn
+          yarn-run: lint
