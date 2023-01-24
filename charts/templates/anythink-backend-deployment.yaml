@@ -38,7 +38,7 @@ spec:
                   key: new-relic-license-key
                   optional: true
             - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_ENABLED
-              value: true
+              value: "true"
             - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_MAX_SAMPLES_STORED
               value: 20000
           image: "{{ include "anythink-tenant.backendRepository" .}}:{{ .Values.backend.image.tag }}"
