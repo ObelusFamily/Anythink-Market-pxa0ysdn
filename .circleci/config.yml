@@ -18,6 +18,8 @@ jobs:
           name: Run tests
           command: yarn test
   linting:
+    docker:
+      - image: cimg/node:16.18
     working_directory: ~/market/frontend
     steps:
       - checkout:
