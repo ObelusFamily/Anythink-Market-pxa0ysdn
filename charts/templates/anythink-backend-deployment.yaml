@@ -33,6 +33,10 @@ spec:
               value: "{{ .Values.database.connectionProtocol }}{{ .Values.database.env.password }}:@{{ .Values.database.serviceName }}:{{ .Values.database.servicePort }}/{{ .Values.database.databaseName }}"
             - name: NEW_RELIC_APP_NAME
               value: "Anythink Market"
+            - name: NEW_RELIC_APPLICATION_LOGGING_ENABLED
+              value: "true"
+            - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_ENABLED
+              value: "true"
             - name: NEW_RELIC_LICENSE_KEY
               valueFrom:
                 secretKeyRef:
